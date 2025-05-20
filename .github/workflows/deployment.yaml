@@ -30,6 +30,17 @@ jobs:
     runs-on: ubuntu-latest
     needs: [test]
     steps:
+      - name: Fetch latest code
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
+          port: ${{ secrets.PORT }}
+          script: |
+            cd /home/${{ secrets.USERNAME }}/rep-porto/web
+            git add . && git stash && git fetch && git reset --hard origin/master
+
       - name: Re-Build Docker Image
         uses: appleboy/ssh-action@master
         with:
