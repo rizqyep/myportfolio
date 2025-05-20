@@ -77,10 +77,6 @@ func (s *Seeder) SeedAll() error {
 		return err
 	}
 
-	if err := s.SeedProjectExperiences(); err != nil {
-		return err
-	}
-
 	fmt.Println("Seeded all data")
 
 	return nil
