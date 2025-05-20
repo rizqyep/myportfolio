@@ -30,7 +30,7 @@
             background: black;
             z-index: 1000;
             padding: 2rem;
-            animation: fadeOut 0.5s ease-out 4s forwards;
+            animation: fadeOut 0.5s ease-out 4.5s forwards;
         }
 
         .boot-text {
@@ -59,11 +59,11 @@
         }
 
         .boot-text:nth-child(7) {
-            animation-delay: 3.1s;
+            animation-delay: 3.0s;
         }
 
         .boot-text:nth-child(8) {
-            animation-delay: 3.4s;
+            animation-delay: 4.0s;
         }
 
         @keyframes typeWriter {
@@ -85,6 +85,53 @@
                 opacity: 0;
                 visibility: hidden;
             }
+        }
+
+        .terminal-section {
+            opacity: 0;
+            height: 0;
+            transform-origin: top;
+            animation: boxReveal 0.5s ease-out forwards;
+        }
+
+        .terminal-command {
+            opacity: 0;
+            animation: typeWriter 0.5s ease-out forwards;
+        }
+
+        .terminal-content {
+            opacity: 0;
+            animation: fadeIn 0.5s ease-out forwards;
+        }
+
+        @keyframes boxReveal {
+            from {
+                opacity: 0;
+                height: 0;
+            }
+
+            to {
+                opacity: 1;
+                height: var(--box-height);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .work-experience {
+            animation-delay: 9.5s;
+        }
+
+        .work-experience>.terminal-content:nth-child(n) {
+            animation-delay: calc(8.5s + (n - 1) * 1s);
         }
     </style>
 
@@ -114,12 +161,12 @@
         <div class="boot-text text-xs sm:text-base">[OK] User Agent: {{.UserAgent}}</div>
         <div class="boot-text text-xs sm:text-base">[OK] Timestamp: {{.Timestamp}}</div>
     </div>
-    <div class="border border-green-500 p-6 mb-8">
+    <div class="terminal-section border border-green-500 p-6 mb-8" style="--box-height: 240px; animation-delay: 5.0s;">
         <div class="flex items-start gap-6">
-            <div class="text-[10px] sm:text-xs w-36">
+            <div class="terminal-command text-[10px] sm:text-xs w-36" style="animation-delay: 5.5s;">
                 [user@rizqyep.me ~]$ about.sh
             </div>
-            <div class="flex-1">
+            <div class="terminal-content flex-1" style="animation-delay: 6.0s;">
                 <h1 class="text-xl sm:text-2xl font-bold mb-2">rizqyep</h1>
                 <p class="text-green-400 mb-4 text-xs sm:text-base">
                     Software engineer with product in heart, focusing on backend development and system design.
@@ -129,10 +176,10 @@
         </div>
 
         <div class="flex items-start gap-6">
-            <div class="text-[10px] sm:text-xs w-36">
+            <div class="terminal-command text-[10px] sm:text-xs w-36" style="animation-delay: 6.5s;">
                 [user@rizqyep.me]$ contact.sh
             </div>
-            <div class="flex gap-4 text-xs sm:text-sm flex-1">
+            <div class="terminal-content flex gap-4 text-xs sm:text-sm flex-1" style="animation-delay: 7.0s;">
                 <a href="https://linkedin.com/in/rizqyep" target="_blank"
                     class="text-green-400 hover:text-green-300 flex items-center gap-1">
                     <span>$</span> linkedin
@@ -145,20 +192,20 @@
         </div>
     </div>
 
-    <!-- ... existing commented code ... -->
-
-    <div class="border border-green-500 p-4">
-        <div class="text-[10px] sm:text-xs mb-2">[user@rizqyep.me]$ workexperiences.sh</div>
-        <div id="work" hx-get="/works" hx-trigger="load" hx-indicator=".loading">
-            <div class="loading text-green-400 text-xs sm:text-base">Loading work...</div>
+    <div class="terminal-section border border-green-500 p-4" style="animation-delay: 7.5s;">
+        <div class="terminal-command text-[10px] sm:text-xs mb-2" style="animation-delay: 8.0s;">
+            [user@rizqyep.me]$ workexperiences.sh
+        </div>
+        <div id="work" hx-get="/works" hx-trigger="load" hx-indicator=".loading" class="min-h-[100px]">
+            <div class="loading terminal-content text-green-400 text-xs sm:text-base" style="animation-delay: 8.5s;">
+                Loading work...
+            </div>
         </div>
     </div>
 
-    <footer class="text-center mt-8 text-xs sm:text-sm text-green-400">
+    <footer class="terminal-content text-center mt-8 text-xs sm:text-sm text-green-400" style="animation-delay: 10.5s;">
         Built with ❤️ using Go + HTMX
     </footer>
-
-
 </body>
 
 </html>

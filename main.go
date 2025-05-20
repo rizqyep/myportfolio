@@ -34,7 +34,29 @@ func init() {
 	}
 
 	// Initialize templates
-	tmpl = template.Must(template.ParseGlob("templates/*.html"))
+	tmpl = template.Must(template.New("").Funcs(template.FuncMap{
+		"add": func(a, b int) int {
+			return a + b
+		},
+		"mul": func(a, b int) int {
+			return a * b
+		},
+		"sub": func(a, b int) int {
+			return a - b
+		},
+		"div": func(a, b int) int {
+			if b == 0 {
+				return 0
+			}
+			return a / b
+		},
+		"mod": func(a, b int) int {
+			if b == 0 {
+				return 0
+			}
+			return a % b
+		},
+	}).ParseGlob("templates/*.html"))
 }
 
 func runMigrations() error {
