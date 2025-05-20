@@ -1,0 +1,9 @@
+{
+    "watch": [
+        "*.go",
+        "templates/*"
+    ],
+    "ext": "go,html,css,js",
+    "exec": "go run main.go",
+    "signal": "SIGTERM"
+}
