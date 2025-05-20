@@ -2,13 +2,20 @@
 <html>
 
 <head>
-    <title>My Portfolio</title>
+    <title>Rizqy Ep's Portfolio</title>
     <script src="https://unpkg.com/htmx.org@1.9.10"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400&display=swap"
         rel="stylesheet">
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="Rizqy Eka Putra (rizqyep) - Backend Engineer & CTO Indonesia">
+    <meta property="og:description"
+        content="Backend Engineer and Chief Technology Officer (CTO) from Indonesia. Experienced in building scalable systems. Also a proven leader and team player.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://rizqyep.me">
+
     <style>
         * {
             font-family: 'Ubuntu Mono', monospace;
@@ -80,6 +87,21 @@
             }
         }
     </style>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Rizqy Eka Putra",
+        "alternateName": "rizqyep",
+        "jobTitle": ["Backend Engineer", "Chief Technology Officer"],
+        "nationality": "Indonesian",
+        "url": "https://rizqyep.me",
+        "sameAs": [
+        "https://linkedin.com/in/rizqyep"
+        ]
+    }
+    </script>
 </head>
 
 <body class="bg-black text-green-500 p-8 max-w-3xl mx-auto text-sm sm:text-base">
@@ -100,9 +122,8 @@
             <div class="flex-1">
                 <h1 class="text-xl sm:text-2xl font-bold mb-2">rizqyep</h1>
                 <p class="text-green-400 mb-4 text-xs sm:text-base">
-                    Forever a software engineer with product in heart, experienced in building scalable and efficient
-                    systems.
-                    A leader and team player, proven by various work and organizational experience.
+                    Software engineer with product in heart, focusing on backend development and system design.
+                    Also a proven leader and team player, backed by various work and organizational experience.
                 </p>
             </div>
         </div>
