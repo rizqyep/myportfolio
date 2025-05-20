@@ -64,6 +64,6 @@ func main() {
 	http.HandleFunc("/works", handler.ServeWork)
 	http.HandleFunc("/projects", handler.ServeProjects)
 
-	log.Println("Server starting on :8080...")
-	log.Fatal(http.ListenAndServe(":8080", nil))
+	log.Println("Server starting on :8110...")
+	log.Fatal(http.ListenAndServe(":8110", nil))
 }
