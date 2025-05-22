@@ -37,3 +37,4 @@ EXPOSE 8110
 
 # Run the application
 CMD ["./main"]
+

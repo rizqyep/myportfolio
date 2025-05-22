@@ -88,6 +88,7 @@ func main() {
 	http.HandleFunc("/robots.txt", func(w http.ResponseWriter, r *http.Request) {
 		w.Header().Set("Content-Type", "text/plain")
 		w.Write([]byte("User-agent: *\nAllow: /"))
+		w.Write([]byte("Disallow: /static/"))
 	})
 
 	log.Println("Server starting on :8110...")
