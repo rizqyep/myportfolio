@@ -5,15 +5,18 @@
     <title>Rizqy Ep's Portfolio</title>
     <script src="https://unpkg.com/htmx.org@1.9.10"></script>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     <link rel="apple-touch-icon" sizes="180x180" href="/static/web/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/static/web/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/static/web/favicon-16x16.png">
     <link rel="icon" type="image/x-icon" href="/static/favicon/favicon.ico">
     <link rel="manifest" href="/static/favicon/site.webmanifest">
-    <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400&display=swap"
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
         rel="stylesheet">
+
     <!-- Open Graph / Social Media Meta Tags -->
     <meta property="og:title" content="Rizqy Eka Putra (rizqyep) - Backend Engineer">
     <meta property="og:description"
@@ -22,11 +25,12 @@
     <meta property="og:url" content="https://rizqyep.me">
 
     <style>
-        * {
+        body {
             font-family: 'Ubuntu Mono', monospace;
         }
 
         .boot-sequence {
+            font-family: 'Courier Prime', Arial, Helvetica, sans-serif;
             position: fixed;
             top: 0;
             left: 0;
@@ -164,13 +168,22 @@
 
 <body class="bg-black text-white p-4 sm:p-8 max-w-3xl mx-auto text-sm sm:text-base">
     <div class="boot-sequence">
-        <div class="boot-text text-xs sm:text-base">Rizqy Ep's Portfolio v.1.0.0</div>
-        <div class="boot-text text-xs sm:text-base">[OK] Initializing system...</div>
-        <div class="boot-text text-xs sm:text-base">[OK] Kernel booted, starting web page...</div>
+        <div class="boot-text text-xs sm:text-base">Rizqy Ep's Portfolio v.1.2.0</div>
+        <div class="boot-text text-xs sm:text-base"><span class="font-bold text-green-500">[OK]</span> Initializing
+            system...
+        </div>
+        <div class="boot-text text-xs sm:text-base"><span class="font-bold text-green-500">[OK]</span> Kernel booted,
+            starting web
+            page...</div>
         <div class="boot-text text-xs sm:text-base">Getting access info...</div>
-        <div class="boot-text text-xs sm:text-base">[OK] IP Address: {{.IP}}</div>
-        <div class="boot-text text-xs sm:text-base">[OK] User Agent: {{.UserAgent}}</div>
-        <div class="boot-text text-xs sm:text-base">[OK] Timestamp: {{.Timestamp}}</div>
+        <div class="boot-text text-xs sm:text-base"><span class="font-bold text-green-500">[OK]</span> IP Address:
+            {{.IP}}</div>
+        <div class="boot-text text-xs sm:text-base"><span class="font-bold text-green-500">[OK]</span> User Agent:
+            {{.UserAgent}}
+        </div>
+        <div class="boot-text text-xs sm:text-base"><span class="font-bold text-green-500">[OK]</span> Timestamp:
+            {{.Timestamp}}
+        </div>
     </div>
 
     <div class="terminal-section border border-white-500 p-4 mb-8 rounded-md" style=" animation-delay: 5.0s;">
