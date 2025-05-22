@@ -85,6 +85,10 @@ func main() {
 	http.HandleFunc("/", handler.ServeIndex)
 	http.HandleFunc("/works", handler.ServeWork)
 	http.HandleFunc("/projects", handler.ServeProjects)
+	http.HandleFunc("/robots.txt", func(w http.ResponseWriter, r *http.Request) {
+		w.Header().Set("Content-Type", "text/plain")
+		w.Write([]byte("User-agent: *\nAllow: /"))
+	})
 
 	log.Println("Server starting on :8110...")
 	log.Fatal(http.ListenAndServe(":8110", nil))
