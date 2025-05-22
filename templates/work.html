@@ -1,17 +1,19 @@
-<div class="terminal-section work-experience">
-    {{range .}}
-    <div class="terminal-content border border-green-500 p-4 mb-4">
-        <div class="flex items-start gap-4">
-            <div class="terminal-command text-[10px] sm:text-xs">
-                [user@rizqyep.me ~/work/{{.CompanyName}}]$
-            </div>
-            <div>
-                <h2 class="text-lg sm:text-xl font-bold text-green-500">{{.CompanyName}}</h2>
-                <h3 class="text-base sm:text-lg text-green-400 mb-1">{{.Position}}</h3>
-                <p class="text-[10px] sm:text-xs text-green-300 mb-2">{{.StartDate}} - {{.EndDate}}</p>
-                <p class="text-xs sm:text-sm text-green-400">{{.Description}}</p>
-            </div>
+<div class="terminal-section work-experience py-5">
+    {{range $index, $element := .}}
+    <div class="flex items-start gap-6">
+        <div class="terminal-command text-[10px] sm:text-xs w-36">
+            [user@rizqyep.me ~/work/{{.CompanyName}}]$
+        </div>
+        <div class="terminal-content flex-1">
+            <h2 class="text-xl sm:text-2xl  font-bold text-white-500">{{.CompanyName}}</h2>
+            <h3 class="text-base sm:text-lg text-white-400 mb-1">{{.Position}}</h3>
+            <p class="text-[10px] sm:text-xs text-white-300 mb-2">{{.StartDate}} - {{.EndDate}}</p>
+            <p class="text-xs align-justify sm:text-sm text-white-400">{{.Description}}</p>
         </div>
     </div>
+
+    {{if not (eq (add $index 1) (len $))}}
+    <hr class="my-[20px]">
+    {{end}}
     {{end}}
 </div>

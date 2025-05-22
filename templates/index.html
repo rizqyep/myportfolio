@@ -92,11 +92,21 @@
             }
         }
 
+
         .terminal-section {
             opacity: 0;
             height: 0;
             transform-origin: top;
             animation: boxReveal 0.5s ease-out forwards;
+            background: rgba(0, 0, 0, 0.9);
+        }
+
+        .terminal-window {
+            border: 1px solid #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+            padding: 8px;
+            margin-top: 5.0s;
         }
 
         .terminal-command {
@@ -152,7 +162,7 @@
     </script>
 </head>
 
-<body class="bg-black text-green-500 p-4 sm:p-8 max-w-3xl mx-auto text-sm sm:text-base">
+<body class="bg-black text-white p-4 sm:p-8 max-w-3xl mx-auto text-sm sm:text-base">
     <div class="boot-sequence">
         <div class="boot-text text-xs sm:text-base">Rizqy Ep's Portfolio v.1.0.0</div>
         <div class="boot-text text-xs sm:text-base">[OK] Initializing system...</div>
@@ -162,14 +172,25 @@
         <div class="boot-text text-xs sm:text-base">[OK] User Agent: {{.UserAgent}}</div>
         <div class="boot-text text-xs sm:text-base">[OK] Timestamp: {{.Timestamp}}</div>
     </div>
-    <div class="terminal-section border border-green-500 p-6 mb-8" style="--box-height: 240px; animation-delay: 5.0s;">
+
+    <div class="terminal-section border border-white-500 p-4 mb-8 rounded-md" style=" animation-delay: 5.0s;">
+        <div class="terminal-header top-0 bg-white text-black p-2 rounded-t-md flex items-center justify-between mb-[10px] mt-[-16px] mx-[-16px]"
+            style="animation-delay: 4.7s;">
+            <div class="flex space-x-2">
+                <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                <div class="w-3 h-3 rounded-full bg-green-600"></div>
+            </div>
+            <div class="font-bold">personal_info ~ user@rizqyep.me</div>
+            <div class="w-16"><!-- Spacer to maintain center alignment --></div>
+        </div>
         <div class="flex items-start gap-6">
             <div class="terminal-command text-[10px] sm:text-xs w-36" style="animation-delay: 5.5s;">
                 [user@rizqyep.me ~]$ about.sh
             </div>
             <div class="terminal-content flex-1" style="animation-delay: 6.0s;">
                 <h1 class="text-xl sm:text-2xl font-bold mb-2">rizqyep</h1>
-                <p class="text-green-400 mb-4 text-xs sm:text-base">
+                <p class="text-gray-300 mb-4 text-xs sm:text-base align-justify">
                     Software engineer with product at heart, focusing on backend development and system design.
                     Also a proven leader and team player, backed by various work and organizational experience.
                 </p>
@@ -182,33 +203,43 @@
             </div>
             <div class="terminal-content flex gap-4 text-xs sm:text-sm flex-1" style="animation-delay: 7.0s;">
                 <a href="https://linkedin.com/in/rizqyep" target="_blank"
-                    class="text-green-400 hover:text-green-300 flex items-center gap-1">
+                    class="text-gray-400 hover:text-gray-300 flex items-center gap-1">
                     <span>$</span> linkedin
                 </a>
                 <a href="mailto:rizqyepr@gmail.com" target="_blank"
-                    class="text-green-400 hover:text-green-300 flex items-center gap-1">
+                    class="text-gray-400 hover:text-gray-300 flex items-center gap-1">
                     <span>$</span> email
                 </a>
                 <a href="/static/Rizqy Eka Putra Rizaldy_CV.pdf" target="_blank"
-                    class="text-green-400 hover:text-green-300 flex items-center gap-1">
+                    class="text-gray-400 hover:text-gray-300 flex items-center gap-1">
                     <span>$</span> cv
                 </a>
             </div>
         </div>
     </div>
 
-    <div class="terminal-section border border-green-500 p-4" style="animation-delay: 8.0s;">
-        <div class="terminal-command text-[10px] sm:text-xs mb-2" style="animation-delay: 8.5s;">
+    <div class="terminal-section border border-white-500 p-4 rounded-md" style="animation-delay: 8.0s;">
+        <div class="terminal-header top-0 bg-white text-black p-2 rounded-t-md flex items-center justify-between mb-[10px] mt-[-16px] mx-[-16px]"
+            style="animation-delay: 7.7s;">
+            <div class="flex space-x-2">
+                <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                <div class="w-3 h-3 rounded-full bg-green-600"></div>
+            </div>
+            <div class="font-bold">workexperiences ~ user@rizqyep.me</div>
+            <div class="w-16"><!-- Spacer to maintain center alignment --></div>
+        </div>
+        <div class="terminal-command text-[10px] sm:text-xs mb-2" style="animation-delay: 8.7s;">
             [user@rizqyep.me]$ workexperiences.sh
         </div>
         <div id="work" hx-get="/works" hx-trigger="load" hx-indicator=".loading" class="min-h-[100px]">
-            <div class="loading terminal-content text-green-400 text-xs sm:text-base" style="animation-delay: 9.0s;">
+            <div class="loading terminal-content text-gray-400 text-xs sm:text-base" style="animation-delay: 9.0s;">
                 Loading work...
             </div>
         </div>
     </div>
 
-    <footer class="terminal-content text-center mt-8 text-xs sm:text-sm text-green-400" style="animation-delay: 10.0s;">
+    <footer class="terminal-content text-center mt-8 text-xs sm:text-sm text-gray-400" style="animation-delay: 10.0s;">
         Built with ❤️ using Go + HTMX
     </footer>
 </body>
